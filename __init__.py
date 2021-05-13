@@ -6,7 +6,7 @@ import logging
 from mycroft import MycroftSkill, intent_handler
 from adapt.intent import IntentBuilder
 from mycroft.util.parse import match_one
-from signalrcore.hub_connection_builder import HubConnectionBuilder
+# from signalrcore.hub_connection_builder import HubConnectionBuilder
 
 class Chat(MycroftSkill):
     def __init__(self):
@@ -65,17 +65,17 @@ class Chat(MycroftSkill):
             payload = result['payload']
             print(payload)
 
-    def handle_receive_message(self, payload):
-        self.speak_dialog("Incoming Message")
-        self.speak_dialog(payload[0]["message"])
+    # def handle_receive_message(self, payload):
+    #     self.speak_dialog("Incoming Message")
+    #     self.speak_dialog(payload[0]["message"])
 
-    def stop(self):
-        if (self.hub_connection):
-            self.hub_connection.stop()
+    # def stop(self):
+    #     if (self.hub_connection):
+    #         self.hub_connection.stop()
 
-    def shutdown(self):
-        if (self.hub_connection):
-            self.hub_connection.stop()
+    # def shutdown(self):
+    #     if (self.hub_connection):
+    #         self.hub_connection.stop()
 
 def create_skill():
     return Chat()
