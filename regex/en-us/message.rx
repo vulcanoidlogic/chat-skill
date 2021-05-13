@@ -1,1 +1,1 @@
-(message|alert)(?P<text>.*)
+(message|alert) (?P<text>.*)
